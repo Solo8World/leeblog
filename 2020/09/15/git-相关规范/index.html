@@ -6,10 +6,10 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   
-  <title>git 相关规范 - Lee Blog</title>
+  <title>GIT 相关规范 - Lee Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
-  <meta name="keywords" content=生活,博客,前端,游戏>
+  <meta name="keywords" content=GIT>
   
     <meta name="description" content="详细的跳坑记录">
   
@@ -55,14 +55,13 @@
 </header>
 <article class="post">
   <div class="post-title">
-    <h1 class="article-title">git 相关规范</h1>
+    <h1 class="article-title">GIT 相关规范</h1>
   </div>
    <div class="post-meta">
     <span class="post-time">2020-09-15</span>
   </div>
   <div class="post-content">
-    <p>% git插件扩展<br>% 李卓<br>% 2020-09-10</p>
-<h1 id="IDEA-插件Git-Commit-Template"><a href="#IDEA-插件Git-Commit-Template" class="headerlink" title="IDEA 插件Git Commit Template"></a>IDEA 插件<code>Git Commit Template</code></h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+    <h1 id="IDEA-插件Git-Commit-Template"><a href="#IDEA-插件Git-Commit-Template" class="headerlink" title="IDEA 插件Git Commit Template"></a>IDEA 插件<code>Git Commit Template</code></h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
 <li><p><strong><a target="_blank" rel="noopener" href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines">Angular规范</a> 提交格式如下：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>含义：</strong></p>
@@ -98,20 +97,19 @@
 <h2 id="Git-Commit-Template插件的安装与使用"><a href="#Git-Commit-Template插件的安装与使用" class="headerlink" title="Git Commit Template插件的安装与使用"></a><code>Git Commit Template</code>插件的安装与使用</h2><ul>
 <li><strong>安装</strong>  </li>
 </ul>
-<p>idea中直接<code>File</code>-&gt;<code>Setting</code>-&gt;<code>Plugins</code>搜索安装即可<br><img src="https://images.gitee.com/uploads/images/2020/0910/153314_f6504560_5539926.png" width="70%"></p>
+<p>idea中直接<code>File</code>-&gt;<code>Setting</code>-&gt;<code>Plugins</code>搜索安装即可<br><img src="https://s1.ax1x.com/2020/09/16/wcTUMQ.png" width="100%"></p>
 <ul>
 <li><strong>使用</strong>  </li>
 </ul>
 <ol>
 <li><p>安装并重启idea后，操作提交时会有此按钮  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153314_44418686_5539926.png" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wcT2M4.png" width="100%">
 </li>
 <li><p>点击弹出  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153314_a8acd109_5539926.png" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wcTHzD.png" width="100%">
 </li>
 <li><p>按需填写并确认后生成以下格式：  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153314_2246b45d_5539926.png" width="70%">
-
+<img src="https://s1.ax1x.com/2020/09/16/wcTjeA.png" width="100%">
 
 
 </li>
@@ -119,12 +117,12 @@
 <h2 id="利用conventional-changelog生成Change-log"><a href="#利用conventional-changelog生成Change-log" class="headerlink" title="利用conventional-changelog生成Change log"></a>利用conventional-changelog生成Change log</h2><ul>
 <li><strong>安装</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g conventional-changelog-cli</span><br></pre></td></tr></table></figure></li>
 <li><strong>生成</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conventional-changelog -p angular -i CHANGELOG.md -s</span><br></pre></td></tr></table></figure></li>
-<li><strong>生成的md效果如下</strong>  <img src="https://images.gitee.com/uploads/images/2020/0910/153314_048a7909_5539926.png" width="70%">
-
-
-
-</li>
+<li><strong>生成的md效果如下</strong>  </li>
 </ul>
+  <img src="https://s1.ax1x.com/2020/09/16/wc7NY6.png" width="100%">
+
+
+
 <h2 id="更多可参考"><a href="#更多可参考" class="headerlink" title="更多可参考:"></a>更多可参考:</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/daysme/p/7722474.html">Git 提交的正确姿势：Commit message 编写指南</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/itguangit/article/details/99590995#t2">IDEA 中 Git Commit message 编写</a><br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">Commit message 和 Change log 编写指南</a>  </p>
 <hr>
 <h1 id="IDEA插件Git-Flow-Integration"><a href="#IDEA插件Git-Flow-Integration" class="headerlink" title="IDEA插件Git Flow Integration"></a>IDEA插件<code>Git Flow Integration</code></h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h2><blockquote>
@@ -148,26 +146,26 @@
 <li>Windows安装<br>请参考 <a target="_blank" rel="noopener" href="https://juejin.im/post/6844903682027307022">Windows下gitflow的安装方法</a>  </li>
 </ul>
 </li>
-<li>安装Idea插件<br>idea中<code>File</code>-&gt;<code>Setting</code>-&gt;<code>Plugins</code>搜索安装即可  <img src="https://images.gitee.com/uploads/images/2020/0910/153317_68644bd7_5539926.png" width="70%">  
+<li>安装Idea插件<br>idea中<code>File</code>-&gt;<code>Setting</code>-&gt;<code>Plugins</code>搜索安装即可  <img src="https://s1.ax1x.com/2020/09/16/wc7rmd.png" width="100%">  
 
 
 </li>
 </ul>
 <h2 id="插件使用"><a href="#插件使用" class="headerlink" title="插件使用"></a><strong>插件使用</strong></h2><ol>
 <li><p>安装并重启idea后,右下角出现<code>No Gitflow</code>  </p>
-  <img src="https://images.gitee.com/uploads/images/2020/0910/153318_8a8de545_5539926.png" width="70%"></li>
+  <img src="https://s1.ax1x.com/2020/09/16/wc7Imj.png" width="100%"></li>
 <li><p>点击init repo进行初始化<br><em>注：git flow init之前请确保本地没有尚未提交的更改</em>  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153316_06f34fcf_5539926.png" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wc7jcF.png" width="100%">
 </li>
 <li><p>确认后git flow自动基于master创建并切换到develop分支，并在右下角gitflow中出现操作选项    </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153316_5e419ce8_5539926.png" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wcHp7R.png" width="100%">
 
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 新功能开发分支线（feature）</span><br><span class="line">* 开发版本bug修复线（bugfix）</span><br><span class="line">* 新版本发布线&#x2F;预上线（release）</span><br><span class="line">* 生产版本bug修复线（hotfix）</span><br></pre></td></tr></table></figure></li>
 <li><p>开始使用，开发系统管理模块  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153316_150d795d_5539926.png" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wcHVje.png" width="100%">
 </li>
 <li><p>确认后自动生成feature为前缀的开发分支，并提供以下操作  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153318_89a30314_5539926.jpeg" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wcHQ4P.jpg" width="70%">
 
 </li>
 </ol>
@@ -176,39 +174,39 @@
 <li>master<ul>
 <li>主分支, 随项目一直存在的长期分支.</li>
 <li>master分支HEAD所在的位置, 永远是当前生产环境的代码.</li>
-<li>master分支不允许直接提交代码, 仅允许从release或者hotfix分支通过merge request合并代码.<ul>
-<li>develop</li>
+<li>master分支不允许直接提交代码, 仅允许从release或者hotfix分支通过merge request合并代码.</li>
 </ul>
 </li>
+<li>develop<ul>
 <li>开发分支, 随项目一直存在的长期分支.</li>
 <li>develop分支的HEAD所在的位置, 永远是下一个版本中已开发完成的新特性的最新代码.</li>
 <li>develop分支的代码每天自动构建并部署到测试环境.</li>
 <li>develop分支不允许直接提交代码, 仅允许从feature, release或者hotfix分支通过merge request合并代码.</li>
 <li>当develop分支中下一个版本的新特性已经全部开发完毕后, 从develop分支开出release分支, 进入测试阶段.</li>
-<li>在下个版本的release分支创建之前, 非下个版本的feature分支不允许向develop分支合并.<ul>
-<li>feature分支</li>
+<li>在下个版本的release分支创建之前, 非下个版本的feature分支不允许向develop分支合并.</li>
 </ul>
 </li>
+<li>feature分支<ul>
 <li>feature分支是一类以feature/为前缀(gitflow默认值, 可以更换)的分支的统称.</li>
-<li>每一个feature分支从develop分支新建, 进行==某一个功能==的开发. 功能开发并测试稳定后, feature分支将合并回develop分支.</li>
+<li>每一个feature分支从develop分支新建, 进行<strong>某一个功能</strong>的开发. 功能开发并测试稳定后, feature分支将合并回develop分支.</li>
 <li>同一个人可以同时开发多个feature分支, 同一个feature分支也可以同时被多个人开发.</li>
 <li>多个feature同时开发的情形, 后开发完的分支在最后合并回develop时, 往往会遇到冲突的情况. 此时一般遵循一下两种方法解决冲突.<ul>
 <li>先将最新的develop分支向当前feature分支进行合并, 然后再将当前feature分支合并回develop.</li>
 <li>先将当前的feature分支向最新的develop分支进行rebase, 然后再将当前feature分支合并回develop.</li>
-<li>两种方式的比较, 可以参考文章Merging vs. Rebasing, 或其中文版代码合并：Merge、Rebase 的选择<ul>
-<li>release分支</li>
+<li>两种方式的比较, 可以参考文章Merging vs. Rebasing, 或其中文版代码合并：Merge、Rebase 的选择</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>release分支<ul>
 <li>release分支是一类以release/为前缀(gitflow默认值, 可以更换)的分支的统称.</li>
 <li>develop分支上的下一个版本的所有新特性开发完毕, 从develop分支开出一个该版本的release分支, 并进行测试.</li>
 <li>release分支不允许进行新特性开发, 而只进行bug修复和更新版本mata信息(如版本号, 构建日期, 更新日志等), 并且可以不定期将新的bug修复改动合并回develop.</li>
-<li>当release充分测试稳定后, 同时合并进入master分支和develop分支, 并在master分支上的建议该release版本的TAG.<ul>
-<li>hotfix分支</li>
-<li>当生产环境发现紧急bug时，可以通过新建hotfix分支，来修复bug, 修复后双向合并到develop和master.  </li>
+<li>当release充分测试稳定后, 同时合并进入master分支和develop分支, 并在master分支上的建议该release版本的TAG.</li>
 </ul>
 </li>
+<li>hotfix分支<ul>
+<li>当生产环境发现紧急bug时，可以通过新建hotfix分支，来修复bug, 修复后双向合并到develop和master.  </li>
 </ul>
 </li>
 </ul>
@@ -221,12 +219,12 @@
 <li><p>pom文件引入</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>pl.project13.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>git-commit-id-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">generateGitPropertiesFile</span>&gt;</span>true<span class="tag">&lt;/<span class="name">generateGitPropertiesFile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">injectAllReactorProjects</span>&gt;</span>true<span class="tag">&lt;/<span class="name">injectAllReactorProjects</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>重新打包，jar包中自动生成<code>git.properties</code>文件，如下：  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153318_ddfaf1f0_5539926.png" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wcHBCV.png" width="100%">
 </li>
 <li><p>编写项目版本信息查询接口</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> GitProperties gitProperties;</span><br><span class="line"></span><br><span class="line"><span class="meta">@GetMapping(&quot;/version&quot;)</span></span><br><span class="line"><span class="function">HashMap&lt;String, String&gt; <span class="title">version</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    HashMap&lt;String, String&gt; versionInfo = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">8</span>);</span><br><span class="line">    versionInfo.put(<span class="string">&quot;branch&quot;</span>, gitProperties.getBranch());</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitId&quot;</span>, gitProperties.getCommitId());</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitMessage&quot;</span>, gitProperties.get(<span class="string">&quot;commit.message.full&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitUser&quot;</span>, gitProperties.get(<span class="string">&quot;commit.user.name&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitTime&quot;</span>, DateUtil.date(Long.parseLong(gitProperties.get(<span class="string">&quot;commit.time&quot;</span>))).toString());</span><br><span class="line">    versionInfo.put(<span class="string">&quot;buildHost&quot;</span>, gitProperties.get(<span class="string">&quot;build.host&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;buildUser&quot;</span>, gitProperties.get(<span class="string">&quot;build.user.name&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;buildTime&quot;</span>, DateUtil.date(Long.parseLong(gitProperties.get(<span class="string">&quot;build.time&quot;</span>))).toString());</span><br><span class="line">    <span class="keyword">return</span>  versionInfo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p>请求接口  </p>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153319_83786a01_5539926.png" width="70%">
+<img src="https://s1.ax1x.com/2020/09/16/wcHRER.png" width="100%">
 
 
 </li>
@@ -236,7 +234,7 @@
 <h1 id="文本标记语言-Markdown"><a href="#文本标记语言-Markdown" class="headerlink" title="文本标记语言 Markdown"></a>文本标记语言 <code>Markdown</code></h1><blockquote>
 <p>最流行的轻量<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/5964436?fr=aladdin">文本标记语言</a></p>
 </blockquote>
-<h2 id="常用语法："><a href="#常用语法：" class="headerlink" title="常用语法："></a>常用语法：</h2><img src="https://images.gitee.com/uploads/images/2020/0910/205431_80a46944_5539926.png" width="78%">
+<h2 id="常用语法："><a href="#常用语法：" class="headerlink" title="常用语法："></a>常用语法：</h2><img src="https://s1.ax1x.com/2020/09/16/wcHHDH.png" width="100%">
 
 <h2 id="更多请参考-1"><a href="#更多请参考-1" class="headerlink" title="更多请参考"></a>更多请参考</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程| 菜鸟教程</a></p>
 <hr>
@@ -245,7 +243,7 @@
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://pandoc.org/">Pandoc</a> 是由<a target="_blank" rel="noopener" href="https://johnmacfarlane.net/macfarlane-cv.html">John MacFarlane</a> 开发的标记语言转换工具，可实现不同标记语言间的格式转换，堪称该领域中的“瑞士军刀”。  </p>
 </blockquote>
-<img src="https://images.gitee.com/uploads/images/2020/0910/153518_b041b524_5539926.jpeg" width="10%"> 
+<img src="https://s1.ax1x.com/2020/09/16/wcbFVs.jpg" width="10%"> 
 
 
 
@@ -255,13 +253,19 @@
 <li>点击进入二进制包<a target="_blank" rel="noopener" href="https://github.com/jgm/pandoc/releases/tag/2.10.1">下载页面</a> 选取对应包下载安装即可  </li>
 </ul>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a><strong>使用</strong></h2><ul>
-<li>markdown转word<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pandoc git-extend.md  -o md_convert_doc.docx</span><br><span class="line">```  </span><br><span class="line">* markdown转html</span><br><span class="line">```sh</span><br><span class="line">pandoc git-extend.md  -o md_convert_html.html</span><br></pre></td></tr></table></figure>
+<li><p>markdown转word  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc git-extend.md  -o md_convert_doc.docx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>markdown转html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc git-extend.md  -o md_convert_html.html</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 
   </div>
   <div class="post-footer">
+    
+      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li></ul>
     
 
     <a href="#top" class="top">返回顶部</a>
