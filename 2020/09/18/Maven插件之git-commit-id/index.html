@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  
+  <title>Maven插件之git-commit-id - Lee Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  
+  <meta name="keywords" content=GIT>
+  
+    <meta name="description" content="个人不完全技术博客">
+  
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/leeblog/favicon.ico?v=1.02">
+  
+  
+    <link rel="alternate" href="/leeblog/atom.xml " title="Lee Blog" type="application/atom+xml">
+  
+
+  
+<link rel="stylesheet" href="/leeblog/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="/leeblog/" class="logo">Lee Blog</a>
+    <div class="subtitle">Less is more.  enmm... except hair</div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="/leeblog/" class="menu-item-link">主页</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/leeblog/archives" class="menu-item-link">归档</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/leeblog/about" class="menu-item-link">关于</a>
+        </li>
+      
+    </ul>
+  </nav>
+</header>
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">Maven插件之git-commit-id</h1>
+  </div>
+   <div class="post-meta">
+    <span class="post-time">2020-09-18</span>
+  </div>
+  <div class="post-content">
+    <h1 id="Maven插件-git-commit-id-plugin"><a href="#Maven插件-git-commit-id-plugin" class="headerlink" title="Maven插件 git-commit-id-plugin"></a>Maven插件 <code>git-commit-id-plugin</code></h1><blockquote>
+<p>让我们通过接口就晓得后台代码的版本。  </p>
+</blockquote>
+<h2 id="git-commit-id-plugin-使用"><a href="#git-commit-id-plugin-使用" class="headerlink" title="git-commit-id-plugin 使用"></a><a target="_blank" rel="noopener" href="https://github.com/git-commit-id/git-commit-id-maven-plugin">git-commit-id-plugin</a> 使用</h2><ul>
+<li><p>pom文件引入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>pl.project13.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>git-commit-id-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">generateGitPropertiesFile</span>&gt;</span>true<span class="tag">&lt;/<span class="name">generateGitPropertiesFile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">injectAllReactorProjects</span>&gt;</span>true<span class="tag">&lt;/<span class="name">injectAllReactorProjects</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>重新打包，jar包中自动生成<code>git.properties</code>文件，如下：  </p>
+<img src="https://s1.ax1x.com/2020/09/16/wcHBCV.png" width="100%">
+</li>
+<li><p>编写项目版本信息查询接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> GitProperties gitProperties;</span><br><span class="line"></span><br><span class="line"><span class="meta">@GetMapping(&quot;/version&quot;)</span></span><br><span class="line"><span class="function">HashMap&lt;String, String&gt; <span class="title">version</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    HashMap&lt;String, String&gt; versionInfo = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">8</span>);</span><br><span class="line">    versionInfo.put(<span class="string">&quot;branch&quot;</span>, gitProperties.getBranch());</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitId&quot;</span>, gitProperties.getCommitId());</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitMessage&quot;</span>, gitProperties.get(<span class="string">&quot;commit.message.full&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitUser&quot;</span>, gitProperties.get(<span class="string">&quot;commit.user.name&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;commitTime&quot;</span>, DateUtil.date(Long.parseLong(gitProperties.get(<span class="string">&quot;commit.time&quot;</span>))).toString());</span><br><span class="line">    versionInfo.put(<span class="string">&quot;buildHost&quot;</span>, gitProperties.get(<span class="string">&quot;build.host&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;buildUser&quot;</span>, gitProperties.get(<span class="string">&quot;build.user.name&quot;</span>));</span><br><span class="line">    versionInfo.put(<span class="string">&quot;buildTime&quot;</span>, DateUtil.date(Long.parseLong(gitProperties.get(<span class="string">&quot;build.time&quot;</span>))).toString());</span><br><span class="line">    <span class="keyword">return</span>  versionInfo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>请求接口  </p>
+<img src="https://s1.ax1x.com/2020/09/16/wcHRER.png" width="100%">
+
+
+</li>
+</ul>
+<h2 id="更多请参考"><a href="#更多请参考" class="headerlink" title="更多请参考"></a>更多请参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/git-commit-id/git-commit-id-maven-plugin">该插件的github</a></p>
+
+  </div>
+  <div class="post-footer">
+    
+      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/leeblog/tags/GIT/" rel="tag">GIT</a></li></ul>
+    
+
+    <a href="#top" class="top">返回顶部</a>
+  </div>
+</article>
+<footer>
+  &copy; 2020
+  <span class="author">
+    LeeZhuo
+  </span>
+</footer>
+    </div>
+  </body>
+</html>
