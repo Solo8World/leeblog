@@ -54,12 +54,13 @@
     <h1 class="article-title">Maven插件之git-commit-id</h1>
   </div>
    <div class="post-meta">
-    <span class="post-time">2020-09-15</span>
+    <span class="post-time">2020-09-05</span>
   </div>
   <div class="post-content">
     <h1 id="Maven插件-git-commit-id-plugin"><a href="#Maven插件-git-commit-id-plugin" class="headerlink" title="Maven插件 git-commit-id-plugin"></a>Maven插件 <code>git-commit-id-plugin</code></h1><blockquote>
-<p>让我们通过接口就晓得后台代码的版本。  </p>
+<p>让我们通过接口就晓得后台代码的版本。    </p>
 </blockquote>
+<p>该插件会在源码编译打包时生成git版本信息、打包信息，便于后期运维。</p>
 <h2 id="git-commit-id-plugin-使用"><a href="#git-commit-id-plugin-使用" class="headerlink" title="git-commit-id-plugin 使用"></a><a target="_blank" rel="noopener" href="https://github.com/git-commit-id/git-commit-id-maven-plugin">git-commit-id-plugin</a> 使用</h2><ul>
 <li><p>pom文件引入</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>pl.project13.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>git-commit-id-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">generateGitPropertiesFile</span>&gt;</span>true<span class="tag">&lt;/<span class="name">generateGitPropertiesFile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">injectAllReactorProjects</span>&gt;</span>true<span class="tag">&lt;/<span class="name">injectAllReactorProjects</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
@@ -71,8 +72,11 @@
 <li><p>请求接口  </p>
 <img src="https://s1.ax1x.com/2020/09/16/wcHRER.png" width="100%">
 
-
 </li>
+</ul>
+<p>##注意事项</p>
+<ul>
+<li>springBoot 2.3.0之后的版本无法直接注入GitProperties，<br>需要在启动类声明GitProperties类的Bean属性。</li>
 </ul>
 <h2 id="更多请参考"><a href="#更多请参考" class="headerlink" title="更多请参考"></a>更多请参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/git-commit-id/git-commit-id-maven-plugin">该插件的github</a></p>
 
