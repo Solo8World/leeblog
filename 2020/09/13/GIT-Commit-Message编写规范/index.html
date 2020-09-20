@@ -6,7 +6,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   
-  <title>GIT Commit Message编写规范 - Lee Blog</title>
+  <title>idea插件git commit template的使用与changeLog的生成 - Lee Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
   <meta name="keywords" content=GIT,开发规范>
@@ -51,15 +51,19 @@
 </header>
 <article class="post">
   <div class="post-title">
-    <h1 class="article-title">GIT Commit Message编写规范</h1>
+    <h1 class="article-title">idea插件git commit template的使用与changeLog的生成</h1>
   </div>
    <div class="post-meta">
     <span class="post-time">2020-09-13</span>
   </div>
   <div class="post-content">
-    <h1 id="IDEA-插件Git-Commit-Template"><a href="#IDEA-插件Git-Commit-Template" class="headerlink" title="IDEA 插件Git Commit Template"></a>IDEA 插件<code>Git Commit Template</code></h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines">Angular规范</a> 提交格式如下：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure></li>
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>git commit template 该插件是为了规范git提交注释的。一个项目一个团队的git log一定要整整齐齐的。<br>统一的提交注释规范，除了自己赏心悦目获得极大的舒适感以外，还能为后续的code review、版本升级chang log文档的生成，提供极大的便利。  </p>
+<ul>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines">Angular规范</a> 提交格式如下：</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;BLANK LINE&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p><strong>含义：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">提交类型(改动涉及范围): 简要描述</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">详细描述(可换多行进行描述)</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;页脚&gt;（BREAKING CHANGE重大改动描述；Close Issue）</span><br></pre></td></tr></table></figure>
 </li>
